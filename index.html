@@ -18,42 +18,33 @@
     }
     .chat-container {
       width: 100%;
-      max-width: 680px;
+      max-width: 100%;
       height: 100vh;
       background: #ffffff;
       display: flex;
       flex-direction: column;
       box-shadow: 0 4px 32px rgba(0,0,0,0.10);
-    }
-    header {
+    } 50%{opacity:0.3;} }
+    .title-bar {
       background: linear-gradient(135deg, #1a6b3c 0%, #2d9e5f 100%);
-      padding: 16px 20px;
+      padding: 6px 14px;
       display: flex;
       align-items: center;
-      gap: 12px;
+      justify-content: space-between;
       flex-shrink: 0;
     }
-    .header-icon {
-      width: 42px; height: 42px;
-      background: rgba(255,255,255,0.2);
+    .title-bar span {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+    .online-dot-small {
+      width: 6px; height: 6px;
+      background: #7effc0;
       border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.3rem;
-      flex-shrink: 0;
+      animation: blinkSmall 2s infinite;
     }
-    .header-text h1 { font-size: 1rem; font-weight: 800; color: #ffffff; line-height: 1.2; }
-    .online-badge {
-      margin-left: auto;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      background: rgba(255,255,255,0.15);
-      padding: 4px 10px;
-      border-radius: 20px;
-    }
-    .online-dot { width: 7px; height: 7px; background: #7effc0; border-radius: 50%; animation: blink 2s infinite; }
-    .online-badge span { font-size: 0.7rem; color: #d0ffe8; font-weight: 600; }
-    @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+    @keyframes blinkSmall { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
     .chips-bar {
       padding: 10px 14px;
       display: flex;
@@ -140,22 +131,14 @@
     #send-btn:hover { transform: scale(1.07); }
     #send-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
     #send-btn svg { width: 17px; height: 17px; }
-    .footer-note { text-align: center; font-size: 0.62rem; color: #aab8c2; padding: 5px 0 6px; background: #fff; font-weight: 600; }
   </style>
 </head>
 <body>
 <div class="chat-container">
-  <header>
-    <div class="header-icon">🎶</div>
-    <div class="header-text">
-      <h1>Festival International 2026 — AI Chatbot</h1>
-    </div>
-    <div class="online-badge">
-      <div class="online-dot"></div>
-      <span>Online</span>
-    </div>
-  </header>
-
+  <div class="title-bar">
+    <span>🎶 Festival International 2026 — AI Assistant</span>
+    <div class="online-dot-small"></div>
+  </div>
   <div class="chips-bar">
     <button class="chip" onclick="sendChip(this)">🎵 Music lineup</button>
     <button class="chip" onclick="sendChip(this)">🍴 Food options</button>
@@ -173,8 +156,7 @@
     <div class="msg bot">
       <div class="avatar">🎶</div>
       <div class="bubble">
-        Welcome to <strong>Festival International de Louisiane 2026</strong> — celebrating 40 years of world music in Lafayette! 🎉<br><br>
-        Ask me anything about the festival — music, food, payment, parking, stages, schedules, and more. How can I help you?
+        Welcome to <strong>Festival International de Louisiane 2026</strong> 🎉 Ask me about music, food, stages, payment, directions, and more!
       </div>
     </div>
   </div>
@@ -188,7 +170,7 @@
       </svg>
     </button>
   </div>
-  <div class="footer-note">Festival International de Louisiane · Apr 22–26, 2026 · Lafayette, LA · festivalinternational.org</div>
+  
 </div>
 
 <script>
